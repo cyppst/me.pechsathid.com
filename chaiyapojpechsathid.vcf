@@ -3,11 +3,13 @@ VERSION:3.0
 N:Chaiyapoj Pechsathid;;;;
 FN:Chaiyapoj Pechsathid
 ORG:
-TITLE:Software developer
-TEL;TYPE=work,pref:
-TEL;TYPE=work:
-EMAIL;TYPE=work:
+TITLE:Junior Web Developer
+TEL;TYPE=CELL:+66986737917
+TEL;TYPE=WORK:
+TEL;TYPE=HOME:
+TEL;TYPE=MSG:
+EMAIL;TYPE=WORK:chaiyapoj@mail.com
 URL:
-KEY:OPENPGP4FPR:
-UID:enbizcard-356712
+KEY;TYPE=PGP;ENCODING=b:
+UID:EnBizCard-1250375
 END:VCARD
