@@ -1,3 +1,4 @@
+
 const ASSET_A = 'gala';
 const ASSET_B = 'usdt';
 const TICKER = `${ASSET_A}${ASSET_B}`;
@@ -113,6 +114,7 @@ function initDepth() {
     for (const ask of data.a) {
       const order = new Order(parseFloat(ask[0]), parseFloat(ask[1]))
 
+
       // If the quantity is 0, remove the price level
       if (order.quantity === 0) {
         delete sells[order.price];
@@ -147,7 +149,7 @@ function renderWalls(orderBook, element, className, label, reversed) {
     html += `
       <p>
         <span class="price">$${obj.price}</span>
-        <span class="quantity">${obj.quantity} ${ASSET_A.toUpperCase()}</span>
+        <span class="quantity">${numeral(obj.quantity).format('0.0a')} ${ASSET_A.toUpperCase()}</span>
       </p>
     `;
   });
@@ -182,11 +184,10 @@ function renderOrders(orderBook, className, element, reversed) {
   sortedOrders.forEach((obj) => {
     const percentage = Math.round((obj.quantity / highestOrderQuantity) * 100);
     const size = 100 - percentage;
-
     if (obj.quantity >= WALL_THRESHOLD) {
-      html += `<p class="order bold" style="background:linear-gradient(90deg, #off34 ${size}%, #f5f5f5 ${size}%);"><span class="${className}">$${obj.price}</span><span class="quantity">${obj.quantity}</span></p>`;      
+      html += `<p class="order bold" style="background:linear-gradient(90deg, #off34 ${size}%, #f5f5f5 ${size}%);"><span class="${className}">$${obj.price}</span><span class="quantity">${numeral(obj.quantity).format('0.0a')}  ${ASSET_A.toUpperCase()}</span></p>`;     
     } else {
-      html += `<p class="order" style="background:linear-gradient(90deg, #fff ${size}%, #f5f5f5 ${size}%);"><span class="${className}">$${obj.price}</span><span class="quantity">${obj.quantity}</span></p>`;
+      html += `<p class="order" style="background:linear-gradient(90deg, #fff ${size}%, #f5f5f5 ${size}%);"><span class="${className}">$${obj.price}</span><span class="quantity">${numeral(obj.quantity).format('0.0a')} ${ASSET_A.toUpperCase()}</span></p>`;
     }
   });
 
