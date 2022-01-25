@@ -14,7 +14,7 @@ const UI = {
   buyWalls: document.getElementById('buy-walls'),
 };
 
-let WALL_THRESHOLD = 100000; // btc
+let WALL_THRESHOLD = 200000; // btc
 let MAX_ORDERS_TO_RENDER = 50;
 
 let wsStream;
