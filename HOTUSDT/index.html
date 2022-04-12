@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en" prefix="og: http://ogp.me/ns#">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="main.css">
+    <title></title>
+  </head>
+  <body>
+    <div class="container">
+      <h1>
+        Order book / Buy Sell Walls
+      </h1>
+      <p class="lead">
+        Current price <span id="ticker"></span>
+      </p>
+      <form class="form-inline">
+        <label for="i-depth">Depth</label>
+        <input class="form-control" type="number" min="0" step="1" value="50" id="i-depth" readonly disabled>
+        <label for="i-wall-quantity-treshold">Wall quantity threshold</label>
+        <input class="form-control" type="number" min="0" step="1" value="25" id="i-wall-quantity-treshold" readonly disabled>
+      </form>
+      <hr />
+      <div class="row">
+        <div class="col-xs-6">
+          <div id="sell-walls"></div>
+          <p class="current-price"></p>
+          <p id="bids"></p>
+        </div>
+        <div class="col-xs-6">
+          <div id="buy-walls"></div>
+          <p class="current-price"></p>
+          <p id="asks"></p>
+        </div>
+      </div>
+      <hr />
+    </div>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/numeral.js/2.0.6/numeral.min.js"></script>
+    <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <script src="main.js"></script>
+  </body>
+</html>
