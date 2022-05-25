@@ -1,39 +1,827 @@
-<!DOCTYPE html><html lang="en" style="background-color: rgb(5, 150, 105);"><head><meta charset="UTF-8"> <meta name="viewport" content="width=device-width, initial-scale=1.0"> <meta name="robots" content="noindex, nofollow"> <meta name="author" content="EnBizCard - An Open-Source Digital Business Card Generator"> <meta name="url" content="https://enbizcard.vercel.app/"> <meta name="designer" content="Vishnu Raghav"> <meta property="og:title" content="Chaiyapoj Pechsathid's Digital Business Card"> <meta property="twitter:title" content="Chaiyapoj Pechsathid's Digital Business Card"> <script>
-          "http"==window.location.href.substr(0,4)&&"/"!=window.location.href.slice(-1)&&window.location.replace(window.location.href+"/");
-        </script> <!----> <title>Chaiyapoj Pechsathid's Digital Business Card</title> <style>
-          #body{ font-family: sans-serif; } input[type='range']::-moz-range-track { background: none; } input[type='range']::-moz-range-thumb { -moz-appearance: none; width: 1.5rem; height: 1.5rem; border-radius: 0.25rem; border: none; background: #059669; z-index: 3; cursor: pointer; } input[type='range']::-webkit-slider-thumb { -webkit-appearance: none; width: 1.5rem; height: 1.5rem; border-radius: 0.25rem; border: none; background: #059669; z-index: 3; cursor: pointer; } .closeColor{ filter:invert(1)  } .topAction { } .iconColor{ color:#eee;  } .cardColor{ color:#222 !important } .textColor{ color:#222 !important } .seekbarColor{  background:#05966980 !important }
-        </style> <style>
-          #info{ border-left: 0.25rem dashed #059669 } .section{border-left: 0.25rem solid #059669}
-        </style> <!----><link rel="stylesheet" href="./style.min.css"><script async="" src="https://www.googletagmanager.com/gtag/js?id=G-RJ0KZL1ZBX"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Bittanto - Creative Resume HTML5 Responsive Template</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width">
 
-  gtag('config', 'G-RJ0KZL1ZBX');
-</script></head> <body id="body"><div id="modal" style="background-color: rgb(221, 221, 221); visibility: hidden; top: 2rem; opacity: 0;"><a id="close" class="closeColor"><div class="icon"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" xml:space="preserve" style="fill-rule:evenodd;clip-rule:evenodd;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:2"><path style="fill:none" d="M0 0h24v24H0z"></path><path d="M18 6 6 18M6 6l12 12" style="fill:none;fill-rule:nonzero;stroke:#fff;stroke-width:2px"></path></svg></div></a> <div id="keyView"><p class="textColor">
-              Use my public key to send me encrypted messages
-            </p> <a download="" target="_blank" id="dlKey" rel="noreferrer" tabindex="-1" style="background-color: rgb(5, 150, 105);" href="./Chaiyapoj Pechsathid's public key.asc"><div class="icon iconColor"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" xml:space="preserve" style="fill-rule:evenodd;clip-rule:evenodd;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:2"><path style="fill:none" d="M0 0h24v24H0z"></path><path d="M21 15v4c0 1.097-.903 2-2 2H5c-1.097 0-2-.903-2-2v-4m4-5 5 5 5-5m-5 5V3" style="fill:none;fill-rule:nonzero;stroke:#fff;stroke-width:2px"></path></svg></div> <span class="iconColor">Download Key</span></a></div> <div id="copyView"><p class="textColor">
-              Copy and send the URL to share my Business Card
-            </p> <button id="copyURL" style="background-color: rgb(5, 150, 105);"><div class="icon iconColor"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" xml:space="preserve" style="fill-rule:evenodd;clip-rule:evenodd;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:2"><path style="fill:none" d="M0 0h24v24H0z"></path><path d="M22 11a2 2 0 0 0-2-2h-9a2 2 0 0 0-2 2v9a2 2 0 0 0 2 2h9a2 2 0 0 0 2-2v-9Z" style="fill:none;stroke:#fff;stroke-width:2px"></path><path d="M5 15H4c-1.097 0-2-.903-2-2V4c0-1.097.903-2 2-2h9c1.097 0 2 .903 2 2v1" style="fill:none;fill-rule:nonzero;stroke:#fff;stroke-width:2px"></path></svg></div> <span class="iconColor">Copy URL</span></button></div> <div id="qrView" class="textColor"><div id="qr"></div> <h3>Scan the QR Code</h3> <p>to view my Business Card on another device</p></div></div> <header><div id="topActions" style="display: none;"><div><a id="share"><div class="icon topAction"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" xml:space="preserve" style="fill-rule:evenodd;clip-rule:evenodd;stroke-linecap:round;stroke-miterlimit:2"><g><path style="fill:none" d="M0 0h24v24H0z"></path><clipPath id="a"><path d="M0 0h24v24H0z"></path></clipPath><g clip-path="url(#a)"><circle cx="17" cy="5" r="3" style="fill:none;stroke:#fff;stroke-width:2px"></circle><circle cx="5" cy="12" r="3" style="fill:none;stroke:#fff;stroke-width:2px"></circle><circle cx="17" cy="19" r="3" style="fill:none;stroke:#fff;stroke-width:2px"></circle><path d="m7.59 13.51 6.83 3.98m-.01-10.98-6.82 3.98" style="fill:none;stroke:#fff;stroke-width:2px"></path></g></g></svg></div></a> <a id="showQR"><div class="icon topAction"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" xml:space="preserve" style="fill-rule:evenodd;clip-rule:evenodd;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:2"><path style="fill:none" d="M0 0h24v24H0z"></path><path d="M4 4h4v4H4V4Zm0 12h4v4H4v-4ZM16 4h4v4h-4V4Z" style="fill:none;stroke:#fff;stroke-width:2px"></path><path d="M12 4v14c0 1.097.903 2 2 2h4c1.097 0 2-.903 2-2v-4c0-1.097-.903-2-2-2H4" style="fill:none;stroke:#fff;stroke-width:2px;stroke-linejoin:miter"></path><path style="fill:#fff" d="M15 15h2v2h-2z"></path></svg></div></a></div> <!----></div> <div class="headerImgC"><img id="cover" src="./cover.jpeg" alt="Background Pattern"> <!----></div></header> <main style="background-color: rgb(221, 221, 221);"><img id="profilePhoto" src="./photo.jpeg" alt="Photo"> <div id="info" class="textColor"><p class="name">
-              Chaiyapoj Pechsathid
-            </p> <!----> <p class="jobtitle">
-              Junior Web Developer
-            </p> <p class="bizname">
-              
-            </p></div> <!----> <a id="cta" rel="noreferrer" download="" target="_blank" aria-label="Save Contact" style="background-color: rgb(5, 150, 105);" href="chaiyapojpechsathid.vcf"><div class="icon 
-iconColor"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" xml:space="preserve" style="fill-rule:evenodd;clip-rule:evenodd;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:2"><path 
-style="fill:none" d="M0 0h24v24H0z"></path><circle cx="8.5" cy="7" r="4" style="fill:none;stroke:#fff;stroke-width:2.29px" transform="matrix(.875 0 0 .875 4.563 -.625)"></circle><path d="M86 181c0-3.863 3.137-7 7-7s7 
-3.137 7 7" style="fill:none;stroke:#fff;stroke-width:2px" transform="translate(-81 -163)"></path><path d="M104 168v6m3-3-3 3-3-3" style="fill:none;fill-rule:nonzero;stroke:#fff;stroke-width:2px" 
-transform="translate(-92 -152)"></path></svg></div> <p class="iconColor">Save Contact</p></a> <div class="actions"><div class="actionsC"><div class="actionBtn"><a href="tel:+66949311421" target="_blank" rel="noopener 
-noreferrer" aria-label="Mobile" style="background-color: rgb(5, 150, 105);"><div class="icon iconColor"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" xml:space="preserve" style="fill-rule:evenodd;clip-rule:evenodd;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:2"><path style="fill:none" d="M0 0h24v24H0z"></path><path d="M11.5 22a.952.952 0 0 1-1.052.945c-4.358-.544-7.851-4.338-8.379-8.39a.938.938 0 0 1 .936-1.046c.399-.009.847-.009 1.202-.009.388 0 .738.237.882.597l.478 1.196a.95.95 0 0 1-.21 1.025l-.107.107a.951.951 0 0 0-.181 1.091c.495.825 1.59 1.92 2.425 2.396a.927.927 0 0 0 1.066-.177c.05-.02.086-.056.122-.092a.95.95 0 0 1 1.025-.21l1.196.478c.36.144.597.494.597.882V22Z" style="fill:none;stroke:#fff;stroke-width:.95px" transform="translate(-2.21 -26.421) scale(2.10526)"></path></svg></div></a> <p class="textColor">
-                  Mobile
-                </p></div></div><div class="actionsC"><div class="actionBtn"><a href="https://line.me/ti/p/noifo1" target="_blank" rel="noopener noreferrer" aria-label="Line" style="background-color: rgb(5, 150, 105);"><div class="icon iconColor"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" xml:space="preserve" style="fill-rule:evenodd;clip-rule:evenodd;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:2"><path style="fill:none" d="M0 0h24v24H0z"></path><path d="M164 30c5.519 0 10 4.033 10 9 0 8-11 11-11 11v-2.045c-5.05-.452-9-4.291-9-8.955 0-4.967 4.481-9 10-9Z" style="fill:none;stroke:#fff;stroke-width:2px" transform="translate(-152 -28)"></path><path d="M158 37v4h2" style="fill:none;stroke:#fff;stroke-width:1px;stroke-miterlimit:1" transform="translate(-152 -28.5)"></path><path d="M168 38.5h1.5" style="fill:none;stroke:#fff;stroke-width:1px;stroke-miterlimit:1" transform="translate(-152 -28)"></path><path d="M162 37v4" style="fill:none;stroke:#fff;stroke-width:1px;stroke-miterlimit:1" transform="translate(-152 -28.5)"></path><path d="M164 40.5v-4l2 4v-4M170 36.5h-2v4h2" style="fill:none;stroke:#fff;stroke-width:1px;stroke-miterlimit:1" transform="translate(-152 -28)"></path></svg></div></a> <p class="textColor">
-                  Line
-                </p></div></div><div class="actionsC"><div class="actionBtn"><a href="mailto:chaiyapoj@mail.com" target="_blank" rel="noopener noreferrer" aria-label="Email" style="background-color: rgb(5, 150, 105);"><div class="icon iconColor"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" xml:space="preserve" style="fill-rule:evenodd;clip-rule:evenodd;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:2"><path style="fill:none" d="M0 0h24v24H0z"></path><path d="M22 33.75c0-.966-.896-1.75-2-1.75H4c-1.104 0-2 .784-2 1.75v10.5c0 .966.896 1.75 2 1.75h16c1.104 0 2-.784 2-1.75v-10.5Z" style="fill:none;stroke:#fff;stroke-width:1.86px" transform="matrix(1 0 0 1.14286 0 -32.571)"></path><path d="m18 7.042-6 2.625-6-2.625" style="fill:none;fill-rule:nonzero;stroke:#fff;stroke-width:1.86px" transform="matrix(1 0 0 1.14286 0 1.952)"></path></svg></div></a> <p class="textColor">
-                  Email
-                </p></div></div><div class="actionsC"><div class="actionBtn"><a href="https://g.page/cyppst" target="_blank" rel="noopener noreferrer" aria-label="Location" style="background-color: rgb(5, 150, 105);"><div class="icon iconColor"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" xml:space="preserve" style="fill-rule:evenodd;clip-rule:evenodd;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:2"><g><path style="fill:none" d="M0 0h24v24H0z"></path><circle cx="12" cy="10" r="3" style="fill:none;stroke:#fff;stroke-width:2px"></circle><path d="M40 29c4.967 0 9 4.033 9 9 0 7-9 13-9 13s-9-6.033-9-13c0-4.967 4.033-9 9-9Z" style="fill:none;stroke:#fff;stroke-width:2px" transform="translate(-28 -28)"></path></g></svg></div></a> <p class="textColor">
-                  Location
-                </p></div></div><div class="actionsC"><div class="actionBtn"><a target="_blank" rel="noopener noreferrer" aria-label="Telegram" href="https://t.me/telegolf" style="background-color: rgb(5, 150, 105);"><div class="icon iconColor"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" xml:space="preserve" style="fill-rule:evenodd;clip-rule:evenodd;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:1.5"><path style="fill:none" d="M0 0h24v24H0z"></path><path d="m10 14 3.636-4M1 12l19-9-2 18-5-4.375L8 19l-2-5.889L1 12Z" style="fill:none;stroke:#fff;stroke-width:2px"></path></svg></div></a> <p class="textColor">
-                  Telegram
-                </p></div></div></div> <div class="actions secondary"><div class="actionsC"><div class="actionBtn secBtn"><a href="https://instagram.com/cyppst" target="_blank" rel="noopener noreferrer" aria-label="Instagram" style="background-color: rgb(64, 93, 230);"><div class="icon"><svg xmlns="http://www.w3.org/2000/svg" fill="#fff" viewBox="0 0 24 24"><path d="M11.999 7.377a4.623 4.623 0 1 0 0 9.248 4.623 4.623 0 0 0 0-9.248zm0 7.627a3.004 3.004 0 1 1 0-6.008 3.004 3.004 0 0 1 0 6.008z"></path><circle cx="16.806" cy="7.207" r="1.078"></circle><path d="M20.533 6.111A4.605 4.605 0 0 0 17.9 3.479a6.606 6.606 0 0 0-2.186-.42c-.963-.042-1.268-.054-3.71-.054s-2.755 0-3.71.054a6.554 6.554 0 0 0-2.184.42 4.6 4.6 0 0 0-2.633 2.632 6.585 6.585 0 0 0-.419 2.186c-.043.962-.056 1.267-.056 3.71 0 2.442 0 2.753.056 3.71.015.748.156 1.486.419 2.187a4.61 4.61 0 0 0 2.634 2.632 6.584 6.584 0 0 0 2.185.45c.963.042 1.268.055 3.71.055s2.755 0 3.71-.055a6.615 6.615 0 0 0 2.186-.419 4.613 4.613 0 0 0 2.633-2.633c.263-.7.404-1.438.419-2.186.043-.962.056-1.267.056-3.71s0-2.753-.056-3.71a6.581 6.581 0 0 0-.421-2.217zm-1.218 9.532a5.043 5.043 0 0 1-.311 1.688 2.987 2.987 0 0 1-1.712 1.711 4.985 4.985 0 0 1-1.67.311c-.95.044-1.218.055-3.654.055-2.438 0-2.687 0-3.655-.055a4.96 4.96 0 0 1-1.669-.311 2.985 2.985 0 0 1-1.719-1.711 5.08 5.08 0 0 1-.311-1.669c-.043-.95-.053-1.218-.053-3.654 0-2.437 0-2.686.053-3.655a5.038 5.038 0 0 1 .311-1.687c.305-.789.93-1.41 1.719-1.712a5.01 5.01 0 0 1 1.669-.311c.951-.043 1.218-.055 3.655-.055s2.687 0 3.654.055a4.96 4.96 0 0 1 1.67.311 2.991 2.991 0 0 1 1.712 1.712 5.08 5.08 0 0 1 .311 1.669c.043.951.054 1.218.054 3.655 0 2.436 0 2.698-.043 3.654h-.011z"></path></svg></div></a></div></div><div class="actionsC"><div class="actionBtn secBtn"><a href="https://facebook.com/cyppst" target="_blank" rel="noopener noreferrer" aria-label="Facebook" style="background-color: rgb(24, 119, 242);"><div class="icon"><svg xmlns="http://www.w3.org/2000/svg" fill="#fff" viewBox="0 0 24 24"><path d="M12.001 2.002c-5.522 0-9.999 4.477-9.999 9.999 0 4.99 3.656 9.126 8.437 9.879v-6.988h-2.54v-2.891h2.54V9.798c0-2.508 1.493-3.891 3.776-3.891 1.094 0 2.24.195 2.24.195v2.459h-1.264c-1.24 0-1.628.772-1.628 1.563v1.875h2.771l-.443 2.891h-2.328v6.988C18.344 21.129 22 16.992 22 12.001c0-5.522-4.477-9.999-9.999-9.999z"></path></svg></div></a></div></div></div> </main> <!----><script src="./qrcode.min.js"></script><script>let m=document.getElementById("modal"),c=document.getElementById("close"),ki=document.getElementById("keyView"),cv=document.getElementById("copyView"),curl=document.getElementById("copyURL"),qrv=document.getElementById("qrView"),qr=document.getElementById("qr"),s=document.getElementById("share"),sqr=document.getElementById("showQR"),sk=document.getElementById("showKey");function tC(e){"2rem"==e.style.top?(e.style.visibility="visible",e.style.top="0px",e.style.opacity=1):(e.style.top="2rem",e.style.opacity=0,setTimeout(()=>{e.style.visibility="hidden"},200))}function dN(e){e.style.display="none"}window.addEventListener("load",()=>{document.querySelector("#topActions").style.display="flex",qr.innerHTML=new QRCode({content:window.location.href,container:"svg-viewbox",join:!0,ecl:"L",padding:0}).svg()}),navigator.canShare?s.addEventListener("click",()=>{navigator.share({title:document.title,text:"You can view my Digital Business Card here:",url:window.location.href})}):s.addEventListener("click",()=>{tC(m),cv.style.display="flex",dN(qrv),ki&&dN(ki)}),sqr.addEventListener("click",()=>{tC(m),qrv.style.display="block",dN(cv),ki&&dN(ki)}),sk&&sk.addEventListener("click",()=>{tC(m),ki&&(ki.style.display="flex"),dN(cv),dN(qrv)}),c.addEventListener("click",()=>tC(m)),curl.addEventListener("click",async()=>{let e=curl.querySelectorAll(".iconColor")[1];await navigator.clipboard.writeText(window.location.href).then(t=>{e.innerText="Copied",setTimeout(()=>{e.innerText="Copy URL"},1e3)})});</script></body></html>
+        <!-- Start Include All CSS -->
+        <link rel="stylesheet" href="assets/css/bootstrap.css"/>
+        <link rel="stylesheet" href="assets/css/animate.css"/>
+        <link rel="stylesheet" href="assets/css/stroke-gap-icons.css"/>
+        <link rel="stylesheet" href="assets/css/icofont.css"/>
+        <link rel="stylesheet" href="assets/css/flaticon.css"/>
+        <link rel="stylesheet" href="assets/css/Interest.css">
+        <link rel="stylesheet" href="assets/css/owl.carousel.min.css">
+        <link rel="stylesheet" href="assets/css/owl.theme.default.min.css">
+        <link rel="stylesheet" href="assets/css/lightslider.css">
+        <link rel="stylesheet" href="assets/css/jquery.mCustomScrollbar.css">
+        
+        <link rel="stylesheet" href="assets/css/preset.css"/>
+        <link rel="stylesheet" href="assets/css/ignore_for_wp.css"/>
+        <link rel="stylesheet" href="assets/css/theme.css"/>
+        <link rel="stylesheet" href="assets/css/responsive.css"/>
+        <link rel="stylesheet" href="assets/css/light.css"/>
+        <!-- End Include All CSS -->
+
+        <!-- Favicon Icon -->
+        <link rel="icon"  type="image/png" href="assets/images/favicon.png">
+        <!-- Favicon Icon -->
+    </head>
+    <body class="light">
+        
+        <!-- Preloader Start -->
+        <div class="preloader">
+            <div class="preloader-inner">
+                <div class="preloader-box">
+                    <div class="letter">L</div>
+                    <div class="letter">O</div>
+                    <div class="letter">A</div>
+                    <div class="letter">D</div>
+                    <div class="letter">I</div>
+                    <div class="letter">N</div>
+                    <div class="letter">G</div>
+                </div>
+            </div>
+        </div>
+        <!-- Preloader End -->
+        
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4 profileColumn">
+                    <div class="profileSidebar">
+                        <div class="psHeader">
+                            <svg preserveAspectRatio="none" viewBox="0 0 100 100">
+                                <polygon points="0 20, 100 20, 0 100" opacity=".65"></polygon>
+                            </svg>
+                            <svg class="svg2" preserveAspectRatio="none" viewBox="0 0 100 120">
+                                <polygon points="0 20, 100 20, 15 120" opacity=".8"></polygon>
+                            </svg>
+                            <div class="psContent">
+                                <h3>Chaiyapoj Pechsathid</h3>
+                                <span>Jr. Developer</span>
+                            </div>
+                        </div>
+                        <div class="psPhoto">
+                            <img src="assets/images/home_01/1.jpg" alt=""/>
+                            <div class="psSocial">
+                                <a href="https://go.cyppst.com/facebook" target="_blank" class="fac"><i class="icofont-facebook"></i></a>
+                                <!-- <a href="https://twitter.com" target="_blank" class="twi"><i class="icofont-twitter"></i></a> -->
+                                <a href="https://go.cyppst.com/instagram" target="_blank" class="ins"><i class="icofont-instagram"></i></a>
+                            </div>
+                        </div>
+                        <div class="psSkills">
+                            <div class="pssBox" data-count="70">
+                                <div class="pssbCount">70.</div>
+                                <h5>Network Infrastructure</h5>
+                                <div class="pssbBars"><div class="pssbBar" style="width: 0%;"></div></div>
+                            </div>
+                            <div class="pssBox" data-count="60">
+                                <div class="pssbCount">60.</div>
+                                <h5>Internet of Things (IoT)</h5>
+                                <div class="pssbBars"><div class="pssbBar" style="width: 0%;"></div></div>
+                            </div>
+                            <div class="pssBox" data-count="85">
+                                <div class="pssbCount">85.</div>
+                                <h5>PHP, Laravel, Database</h5>
+                                <div class="pssbBars"><div class="pssbBar gr2" style="width: 0%;"></div></div>
+                            </div>
+                            <div class="pssBox" data-count="70">
+                                <div class="pssbCount">70.</div>
+                                <h5>Python</h5>
+                                <div class="pssbBars"><div class="pssbBar gr3" style="width: 0%;"></div></div>
+                            </div>
+                        </div>
+                        <div class="psFooter">
+                            <a href="javascript:void(0);" class="btt_btn only_icon btt_reverse"><span><i class="icon icon-DownloadCloud"></i></span></a>
+                            <a href="javascript:void(0);" class="btt_btn contact_me"><span><i class="icon icon-Bag"></i> Hire Me</span></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-8 contentColumn" id="tabContainer">
+                    <header class="header clearfix">
+                        <a href="javascript:void(0)" class="menu_btn"><i class="icofont-navigation-menu"></i>Menu</a>
+                        <nav class="mainMenu">
+                            <ul class="clearfix" id="mainTab">
+                                <li class="active"><a href="#home"><i class="icon icon-House"></i><span>Home</span></a></li>
+                                <li><a href="#resume"><i class="icon icon-User"></i><span>Resume</span></a></li>
+                                <!-- <li><a href="#portfolio"><i class="icon icon-Bulb"></i><span>Portfolio</span></a></li> -->
+                                <!-- <li><a href="#blog"><i class="icon icon-ClipboardText"></i><span>Blog</span></a></li> -->
+                                <li><a href="#contact"><i class="icon icon-Imbox"></i><span>Contact</span></a></li>
+                            </ul>
+                        </nav>
+                        <!-- <a href="#" class="sidebarToggler"><span><span></span><span></span><span></span></span></a> -->
+                    </header>
+                    <div class="sidebar">
+                        <a href="javascript:void(0);" class="widget_closer"><i class="icofont-close-line"></i></a>
+                        <div class="widget widget-search">
+                            <h3 class="widget_title">Search</h3>
+                            <form method="post" action="#" class="search_form">
+                                <input type="text" name="s" placeholder="Enter Keword">
+                                <button type="submit"><i class="icon icon-Search"></i></button>
+                            </form>
+                        </div>
+                        <div class="widget widget-search">
+                            <h3 class="widget_title">Categories</h3>
+                            <ul>
+                                <li><a href="blog.html">Web</a>(18)</li>
+                                <li><a href="blog.html">Startup</a>(11)</li>
+                                <li><a href="blog.html">Branding</a>(17)</li>
+                                <li><a href="blog.html">UI UX</a>(23)</li>
+                                <li><a href="blog.html">Agency</a>(19)</li>
+                            </ul>
+                        </div>
+                        <div class="widget">
+                            <h3 class="widget_title">
+                                Recent Posts
+                            </h3>
+                            <div class="singleRecent">
+                                <img src="assets/images/blog/7.jpg" alt="">
+                                <span>01 Apr, 2021</span>
+                                <a href="single_blog.html">
+                                    Create your next web site with Unity.
+                                </a>
+                            </div>
+                            <div class="singleRecent">
+                                <img src="assets/images/blog/8.jpg" alt="">
+                                <span>31 Mar, 2021</span>
+                                <a href="single_blog.html">
+                                    Truly unique hundreds of elements.
+                                </a>
+                            </div>
+                            <div class="singleRecent">
+                                <img src="assets/images/blog/9.jpg" alt="">
+                                <span>26 Mar, 2021</span>
+                                <a href="single_blog.html">
+                                    Easily create unlimited amount of custom.
+                                </a>
+                            </div>
+                        </div>
+                        <div class="widget">
+                            <h3 class="widget_title">Tags</h3>
+                            <div class="tabclouds">
+                                <a href="blog.html">Web Design</a>
+                                <a href="blog.html">Development</a>
+                                <a href="blog.html">CSS</a>
+                                <a href="blog.html">Studio</a>
+                                <a href="blog.html">Award</a>
+                                <a href="blog.html">Mobile</a>
+                                <a href="blog.html">IOS</a>
+                                <a href="blog.html">IOS</a>
+                                <a href="blog.html">UI / UX</a>
+                                <a href="blog.html">Portfolio</a>
+                            </div>
+                        </div>
+                    </div>
+					<div class="sidebarOverlay"></div>
+                    <div class="bodyContent" id="home">
+                        <div class="pageCointainer">
+                            <section class="comonSection aboutSection">
+                                <div class="container-fluid">
+                                    <div class="row">
+                                        <div class="col-lg-12">
+                                            <h2 class="sectionTitle">About Info</h2>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-lg-12">
+                                            <div class="row">
+                                                <div class="col-lg-6">
+                                                    <div class="icon_box_01">
+                                                        <i class="icon icon-User"></i>
+                                                        <h3>My Name</h3>
+                                                        <p>Chaiyapoj Pechsathid</p>
+                                                    </div>
+                                                </div>
+                                                <div class="col-lg-6">
+                                                    <div class="icon_box_01">
+                                                        <i class="icon icon-Calculator"></i>
+                                                        <h3>My Age</h3>
+                                                        <p>32 Years 241 Days</p>
+                                                    </div>
+                                                </div>
+                                                <div class="col-lg-6">
+                                                    <div class="icon_box_01">
+                                                        <i class="icon icon-Mail"></i>
+                                                        <h3>Email Address</h3>
+                                                        <p>chaiyapoj@mail.com</p>
+                                                    </div>
+                                                </div>
+                                                <div class="col-lg-6">
+                                                    <div class="icon_box_01">
+                                                        <i class="icon icon-Phone"></i>
+                                                        <h3>Phone Number</h3>
+                                                        <p>0949311421</p>
+                                                    </div>
+                                                </div>
+                                                <div class="col-lg-6">
+                                                    <div class="icon_box_01">
+                                                        <i class="icon icon-Pointer"></i>
+                                                        <h3>Address</h3>
+                                                        <p><a href="https://www.google.com/maps/place/189+Lodge+Ave,+Dagenham+RM8+2HQ,+UK/@51.5438977,0.1111455,17z/data=!3m1!4b1!4m5!3m4!1s0x47d8a5c65f86bfd1:0x9f6ccecbee08b740!8m2!3d51.5438944!4d0.1133342" target="_blank">Click Here to View Map.</a></p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row mt30">
+                                        <div class="col-lg-12">
+                                            <h2 class="sectionTitle mb22">Short Bio</h2>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-lg-6">
+                                            <div class="abContent">
+                                                <p>
+                                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
+                                                    Quis ipsum suspendisse ultrices gravida risus commodo. Quis ipsum suspendisse ultrices gravida.
+                                                </p>
+                                                <p>
+                                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt 
+                                                    <a href="#" class="fw_500">ut labore et dolore magna</a> aliqua. 
+                                                </p>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-6">
+                                            <div class="abContent">
+                                                <p class="mb27">
+                                                    Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                                                </p>
+                                                <img class="signImg" src="assets/images/home_01/3.png" alt=""/>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row mt52">
+                                        <div class="col-lg-12">
+                                            <h2 class="sectionTitle">What I Do?</h2>
+                                        </div>
+                                    </div>
+                                    <div class="row itemMb30">
+                                        <div class="col-lg-4">
+                                            <div class="icon_box_02">
+                                                <div class="i_div">
+                                                    <i class="icon icon-Settings"></i>
+                                                </div>
+                                                <h3><a href="javascript:void(0);">Web Development</a></h3>
+                                                <h5>from scratch</h5>
+                                                <p>
+                                                    Sunt explicabo. Nemo enim ipsam voluptatem quia sit voluptas aspernatur.
+                                                </p>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-4">
+                                            <div class="icon_box_02">
+                                                <div class="i_div">
+                                                    <i class="icon icon-Pen"></i>
+                                                </div>
+                                                <h3><a href="javascript:void(0);">UX recherche</a></h3>
+                                                <h5>data collection</h5>
+                                                <p>
+                                                    Sunt explicabo. Nemo enim ipsam voluptatem quia sit voluptas aspernatur.
+                                                </p>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-4">
+                                            <div class="icon_box_02">
+                                                <div class="i_div">
+                                                    <i class="icon icon-Layers"></i>
+                                                </div>
+                                                <h3><a href="javascript:void(0);">UI design</a></h3>
+                                                <h5>creativ design</h5>
+                                                <p>
+                                                    Sunt explicabo. Nemo enim ipsam voluptatem quia sit voluptas aspernatur.
+                                                </p>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-4">
+                                            <div class="icon_box_02">
+                                                <div class="i_div">
+                                                    <i class="icon icon-Phone"></i>
+                                                </div>
+                                                <h3><a href="javascript:void(0);">Application</a></h3>
+                                                <h5>stand alone</h5>
+                                                <p>
+                                                    Sunt explicabo. Nemo enim ipsam voluptatem quia sit voluptas aspernatur.
+                                                </p>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-4">
+                                            <div class="icon_box_02">
+                                                <div class="i_div">
+                                                    <i class="icon icon-Share"></i>
+                                                </div>
+                                                <h3><a href="javascript:void(0);">Social Media</a></h3>
+                                                <h5>digital product</h5>
+                                                <p>
+                                                    Sunt explicabo. Nemo enim ipsam voluptatem quia sit voluptas aspernatur.
+                                                </p>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-4">
+                                            <div class="icon_box_02">
+                                                <div class="i_div">
+                                                    <i class="icon icon-ChartUp"></i>
+                                                </div>
+                                                <h3><a href="javascript:void(0);">Search Engine</a></h3>
+                                                <h5>page rank</h5>
+                                                <p>
+                                                    Sunt explicabo. Nemo enim ipsam voluptatem quia sit voluptas aspernatur.
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row mt30">
+                                        <div class="col-lg-12">
+                                            <h2 class="sectionTitle">What They Says?</h2>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-lg-12">
+                                            <div class="testimonialSlider owl-carousel">
+                                                <div class="singleTestimonial">
+                                                    <div class="testiImg">
+                                                        <img src="assets/images/author/1.jpg" alt="">
+                                                        <span></span>
+                                                    </div>
+                                                    <div class="testicon">
+                                                        <p>
+                                                            They'll have to make the best of things its an uphill climb. Said Californ'y is the place you ought 
+                                                            to be So they loaded up the truck and moved to Beverly. Hills that is. Swimmin' pools movie stars.
+                                                            Maybe you and me were never meant to be.
+                                                        </p>
+                                                        <div class="tesAuthor"><h5>Edward Johnson,</h5> <h6>themewar.com</h6></div>
+                                                    </div>
+                                                </div>
+                                                <div class="singleTestimonial">
+                                                    <div class="testiImg">
+                                                        <img src="assets/images/author/2.jpg" alt="">
+                                                        <span></span>
+                                                    </div>
+                                                    <div class="testicon">
+                                                        <p>
+                                                            They'll have to make the best of things its an uphill climb. Said Californ'y is the place you ought 
+                                                            to be So they loaded up the truck and moved to Beverly. Hills that is. Swimmin' pools movie stars.
+                                                            Maybe you and me were never meant to be.
+                                                        </p>
+                                                        <div class="tesAuthor"><h5>Mosharof Khondoker,</h5> <h6>themewar.com</h6></div>
+                                                    </div>
+                                                </div>
+                                                <div class="singleTestimonial">
+                                                    <div class="testiImg">
+                                                        <img src="assets/images/author/3.jpg" alt="">
+                                                        <span></span>
+                                                    </div>
+                                                    <div class="testicon">
+                                                        <p>
+                                                            They'll have to make the best of things its an uphill climb. Said Californ'y is the place you ought 
+                                                            to be So they loaded up the truck and moved to Beverly. Hills that is. Swimmin' pools movie stars.
+                                                            Maybe you and me were never meant to be.
+                                                        </p>
+                                                        <div class="tesAuthor"><h5>Sara Ferdoush,</h5> <h6>themewar.com</h6></div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row mt60">
+                                        <div class="col-lg-12">
+                                            <h2 class="sectionTitle">Fair Price</h2>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-lg-4">
+                                            <div class="pricingTable text-center">
+                                                <i class="icon icon-Car"></i>
+                                                <h5>Starter Package</h5>
+                                                <p>
+                                                    Suitable for small business or Organizations.
+                                                </p>
+                                                <h2>$27.00</h2>
+                                                <h6>per project</h6>
+                                                <a href="contact.html" class="btt_link"><i class="icon icon-OpenedLock"></i><span>Let's Start</span></a>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-4">
+                                            <div class="pricingTable text-center">
+                                                <i class="icon icon-Truck"></i>
+                                                <h5>Business Package</h5>
+                                                <p>
+                                                    Suitable for medium business or Organizations.
+                                                </p>
+                                                <h2>$47.00</h2>
+                                                <h6>per project</h6>
+                                                <a href="contact.html" class="btt_link"><i class="icon icon-OpenedLock"></i><span>Let's Start</span></a>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-4">
+                                            <div class="pricingTable text-center">
+                                                <i class="icon icon-BigTruck"></i>
+                                                <h5>Pro Package</h5>
+                                                <p>
+                                                    Suitable for any business or Organizations.
+                                                </p>
+                                                <h2>$97.00</h2>
+                                                <h6>per project</h6>
+                                                <a href="contact.html" class="btt_link"><i class="icon icon-OpenedLock"></i><span>Let's Start</span></a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row mt60">
+                                        <div class="col-lg-5">
+                                            <h2 class="sectionTitle">Love To</h2>
+                                            <div class="singleInt">
+                                                <i class="interest-badminton"></i>
+                                                <h3>Badminton</h3>
+                                            </div>
+                                            <div class="singleInt">
+                                                <i class="interest-knight"></i>
+                                                <h3>Chase</h3>
+                                            </div>
+                                            <div class="singleInt">
+                                                <i class="interest-basketball"></i>
+                                                <h3>Basket Ball</h3>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-7">
+                                            <h2 class="sectionTitle">Languages</h2>
+                                            <div class="languageDiv">
+                                                <div class="ldInner profLevel7">
+                                                    <h5>English</h5>
+                                                    <span></span><span></span><span></span><span></span><span></span>
+                                                    <span></span><span></span><span></span><span></span><span></span>
+                                                    <i>7/10</i>
+                                                </div>
+                                                <div class="ldInner profLevel6">
+                                                    <h5>German</h5>
+                                                    <span></span><span></span><span></span><span></span><span></span>
+                                                    <span></span><span></span><span></span><span></span><span></span>
+                                                    <i>6/10</i>
+                                                </div>
+                                                <div class="ldInner profLevel4">
+                                                    <h5>Spanish</h5>
+                                                    <span></span><span></span><span></span><span></span><span></span>
+                                                    <span></span><span></span><span></span><span></span><span></span>
+                                                    <i>4/10</i>
+                                                </div>
+                                                <div class="ldInner profLevel9">
+                                                    <h5>Bangla</h5>
+                                                    <span></span><span></span><span></span><span></span><span></span>
+                                                    <span></span><span></span><span></span><span></span><span></span>
+                                                    <i>9/10</i>
+                                                </div>
+                                                <div class="ldInner profLevel7">
+                                                    <h5>Hindi</h5>
+                                                    <span></span><span></span><span></span><span></span><span></span>
+                                                    <span></span><span></span><span></span><span></span><span></span>
+                                                    <i>7/10</i>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row mt30">
+                                        <div class="col-lg-12">
+                                            <div class="clientSlider owl-carousel">
+                                                <div class="sliderItem">
+                                                    <a href="javascript:void(0);">
+                                                        <img src="assets/images/client/8.png" alt="Client"/>
+                                                    </a>
+                                                </div>
+                                                <div class="sliderItem">
+                                                    <a href="javascript:void(0);">
+                                                        <img src="assets/images/client/9.png" alt="Client"/>
+                                                    </a>
+                                                </div>
+                                                <div class="sliderItem">
+                                                    <a href="javascript:void(0);">
+                                                        <img src="assets/images/client/10.png" alt="Client"/>
+                                                    </a>
+                                                </div>
+                                                <div class="sliderItem">
+                                                    <a href="javascript:void(0);">
+                                                        <img src="assets/images/client/11.png" alt="Client"/>
+                                                    </a>
+                                                </div>
+                                                <div class="sliderItem">
+                                                    <a href="javascript:void(0);">
+                                                        <img src="assets/images/client/12.png" alt="Client"/>
+                                                    </a>
+                                                </div>
+                                                <div class="sliderItem">
+                                                    <a href="javascript:void(0);">
+                                                        <img src="assets/images/client/13.png" alt="Client"/>
+                                                    </a>
+                                                </div>
+                                                <div class="sliderItem">
+                                                    <a href="javascript:void(0);">
+                                                        <img src="assets/images/client/14.png" alt="Client"/>
+                                                    </a>
+                                                </div>
+                                                <div class="sliderItem">
+                                                    <a href="javascript:void(0);">
+                                                        <img src="assets/images/client/15.png" alt="Client"/>
+                                                    </a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row mt60">
+                                        <div class="col-lg-12">
+                                            <h2 class="sectionTitle">Interesting Facts</h2>
+                                        </div>
+                                    </div>
+                                    <div class="row mb30">
+                                        <div class="col-lg-4">
+                                            <div class="icon_box_03 text-center hasCounter" data-count="10">
+                                                <div class="icon_div">
+                                                    <i><span class="counter">10</span>+</i>
+                                                </div>
+                                                <h5>Years Experience</h5>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-4">
+                                            <div class="icon_box_03 text-center hasCounter" data-count="198">
+                                                <div class="icon_div">
+                                                    <i><span class="counter">198</span>+</i>
+                                                </div>
+                                                <h5>Projects Done</h5>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-4">
+                                            <div class="icon_box_03 text-center hasCounter" data-count="2">
+                                                <div class="icon_div">
+                                                    <i><span class="counter">2</span>K+</i>
+                                                </div>
+                                                <h5>Happy Customers</h5>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </section>
+                            <footer class="footer">
+                                <div class="container-fluid">
+                                    <div class="row">
+                                        <div class="col-lg-12 text-center">
+                                            <div class="copyRight">&copy; 2021 All Rights Reserved By <a href="http://themewar.com" target="_blank">cyppst.com</a></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </footer>
+                        </div>
+                    </div>
+                    <div class="bodyContent" id="resume">
+                        <div class="pageCointainer">
+                            <section class="comonSection resumeSection">
+                                <div class="container-fluid">
+                                    <div class="row">
+                                        <div class="col-lg-6">
+                                            <h2 class="sectionTitle">Education</h2>
+                                            <div class="kr-accordion" id="edication_accordion">
+                                                <div class="card">
+                                                    <div class="card-header" id="ea_01">
+                                                        <h2 class="mb-0">
+                                                            <a class="" href="#" data-toggle="collapse" data-target="#ea_col_01" aria-expanded="true" aria-controls="ea_col_01">
+                                                                <i class="icon icon-Medal"></i>
+                                                                <span>Secondary School Certificate</span>
+                                                            </a>
+                                                        </h2>
+                                                    </div>
+                                                    <div id="ea_col_01" class="collapse show" aria-labelledby="ea_01" data-parent="#edication_accordion">
+                                                        <div class="card-body">
+                                                            <div class="ac_meta"><span>Passing Year: 2008</span><span>Grade: 3.92</span></div>
+                                                            Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. 
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="card">
+                                                    <div class="card-header" id="ea_02">
+                                                        <h2 class="mb-0">
+                                                            <a class="collapsed" href="#" data-toggle="collapse" data-target="#ea_col_02" aria-expanded="false" aria-controls="ea_col_02">
+                                                                <i class="icon icon-Medal"></i>
+                                                                <span>Higher Secondary School Certificate</span>
+                                                            </a>
+                                                        </h2>
+                                                    </div>
+                                                    <div id="ea_col_02" class="collapse" aria-labelledby="ea_02" data-parent="#edication_accordion">
+                                                        <div class="card-body">
+                                                            <div class="ac_meta"><span>Passing Year: 2010</span><span>Grade: 3.85</span></div>
+                                                            Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. 
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="card">
+                                                    <div class="card-header" id="ea_03">
+                                                        <h2 class="mb-0">
+                                                            <a class="collapsed" href="#" data-toggle="collapse" data-target="#ea_col_03" aria-expanded="false" aria-controls="ea_col_03">
+                                                                <i class="icon icon-Medal"></i>
+                                                                <span>Computer Science &amp; Engeneering</span>
+                                                            </a>
+                                                        </h2>
+                                                    </div>
+                                                    <div id="ea_col_03" class="collapse" aria-labelledby="ea_01" data-parent="#edication_accordion">
+                                                        <div class="card-body">
+                                                            <div class="ac_meta"><span>Passing Year: 2014</span><span>Grade: 3.79</span></div>
+                                                            Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. 
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="card">
+                                                    <div class="card-header" id="ea_04">
+                                                        <h2 class="mb-0">
+                                                            <a class="collapsed" href="#" data-toggle="collapse" data-target="#ea_col_04" aria-expanded="false" aria-controls="ea_col_04">
+                                                                <i class="icon icon-Medal"></i>
+                                                                <span>Programming Course </span>
+                                                            </a>
+                                                        </h2>
+                                                    </div>
+                                                    <div id="ea_col_04" class="collapse" aria-labelledby="ea_01" data-parent="#edication_accordion">
+                                                        <div class="card-body">
+                                                            <div class="ac_meta"><span>Passing Year: 2015</span><span>Grade: 3.79</span></div>
+                                                            Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. 
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-6">
+                                            <h2 class="sectionTitle">Experience</h2>
+                                            <div class="kr-accordion" id="exps_accordion">
+                                                <div class="card">
+                                                    <div class="card-header" id="ex_01">
+                                                        <h2 class="mb-0">
+                                                            <a class="" href="#" data-toggle="collapse" data-target="#ex_col_01" aria-expanded="true" aria-controls="ex_col_01">
+                                                                <i class="icon icon-Cup"></i>
+                                                                <span>ABC Software Ltd.</span>
+                                                            </a>
+                                                        </h2>
+                                                    </div>
+                                                    <div id="ex_col_01" class="collapse show" aria-labelledby="ex_01" data-parent="#exps_accordion">
+                                                        <div class="card-body">
+                                                            <div class="ac_meta"><span>Jan 2015 - Mar 2016</span><span>Jr. Developer</span></div>
+                                                            Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. 
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="card">
+                                                    <div class="card-header" id="ex_02">
+                                                        <h2 class="mb-0">
+                                                            <a class="collapsed" href="#" data-toggle="collapse" data-target="#ex_col_02" aria-expanded="false" aria-controls="ex_col_02">
+                                                                <i class="icon icon-Cup"></i>
+                                                                <span>XYZ Company Ltd.</span>
+                                                            </a>
+                                                        </h2>
+                                                    </div>
+                                                    <div id="ex_col_02" class="collapse" aria-labelledby="ex_02" data-parent="#exps_accordion">
+                                                        <div class="card-body">
+                                                            <div class="ac_meta"><span>Mar 2016 - Apr 2017</span><span>Sr. Developer</span></div>
+                                                            Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. 
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="card">
+                                                    <div class="card-header" id="ex_03">
+                                                        <h2 class="mb-0">
+                                                            <a class="collapsed" href="#" data-toggle="collapse" data-target="#ex_col_03" aria-expanded="false" aria-controls="ex_col_03">
+                                                                <i class="icon icon-Cup"></i>
+                                                                <span>LCC Softwar Ltd.</span>
+                                                            </a>
+                                                        </h2>
+                                                    </div>
+                                                    <div id="ex_col_03" class="collapse" aria-labelledby="ex_01" data-parent="#exps_accordion">
+                                                        <div class="card-body">
+                                                            <div class="ac_meta"><span>Jul 2017 - Nov 2018</span><span>Lead Developer</span></div>
+                                                            Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. 
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="card">
+                                                    <div class="card-header" id="ex_04">
+                                                        <h2 class="mb-0">
+                                                            <a class="collapsed" href="#" data-toggle="collapse" data-target="#ex_col_04" aria-expanded="false" aria-controls="ex_col_04">
+                                                                <i class="icon icon-Cup"></i>
+                                                                <span>Envato Ltd.</span>
+                                                            </a>
+                                                        </h2>
+                                                    </div>
+                                                    <div id="ex_col_04" class="collapse" aria-labelledby="ex_04" data-parent="#exps_accordion">
+                                                        <div class="card-body">
+                                                            <div class="ac_meta"><span>Nov 2018 - Continue</span><span>Lead Developer</span></div>
+                                                            Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. 
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </section>
+                            <footer class="footer">
+                                <div class="container-fluid">
+                                    <div class="row">
+                                        <div class="col-lg-12 text-center">
+                                            <div class="copyRight">&copy; 2021 All Rights Reserved By <a href="https://me.cyppst.com target="_blank">cyppst.com</a></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </footer>
+                        </div>
+                    </div>
+                    <div class="bodyContent" id="contact">
+                        <div class="pageCointainer">
+                            <section class="comonSection mapSection mb30">
+                                <div class="map" id="map"></div>
+                            </section>
+                            <section class="comonSection contactSection">
+                                <div class="container-fluid">
+                                    <div class="row">
+                                        <div class="col-lg-12">
+                                            <h2 class="sectionTitle">Contact Me</h2>
+                                        </div>
+                                    </div>
+                                    <div class="row mb30">
+                                        <div class="col-lg-8">
+                                            <div class="contact_form">
+                                                <form method="post" action="#" id="contactForm">
+                                                    <div class="row">
+                                                        <div class="col-lg-6">
+                                                            <input type="text" class="required" name="full_name" placeholder="Full Name *"/>
+                                                        </div>
+                                                        <div class="col-lg-6">
+                                                            <input type="text" class="required" name="email" placeholder="Email *"/>
+                                                        </div>
+                                                        <div class="col-lg-6">
+                                                            <input type="text" name="phone" placeholder="Phone"/>
+                                                        </div>
+                                                        <div class="col-lg-6">
+                                                            <input type="text" class="required" name="sjubject" placeholder="Subject *"/>
+                                                        </div>
+                                                        <div class="col-lg-12">
+                                                            <textarea name="message" class="required" placeholder="Message *"></textarea>
+                                                        </div>
+                                                        <div class="col-lg-12">
+                                                            <button type="submit" class="btt_btn"><span><i class="icon icon-Mail"></i>Send Message</span></button>
+                                                        </div>
+                                                    </div>
+                                                </form>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-4">
+                                            <div class="icon_box_01">
+                                                <i class="icon icon-Mail"></i>
+                                                <h3>Email Address</h3>
+                                                <p>k.melissa@caroll.me</p>
+                                            </div>
+                                            <div class="icon_box_01">
+                                                <i class="icon icon-Phone"></i>
+                                                <h3>Phone Number</h3>
+                                                <p>1.800.987.6987</p>
+                                            </div>
+                                            <div class="icon_box_01 addrBox">
+                                                <i class="icon icon-Pointer"></i>
+                                                <h3>Address</h3>
+                                                <p>
+                                                    189 Lodge Avenue,
+                                                    Dagenham, RM8 2HQ,
+                                                    United Kingdom
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </section>
+                            <footer class="footer">
+                                <div class="container-fluid">
+                                    <div class="row">
+                                        <div class="col-lg-12 text-center">
+                                            <div class="copyRight">&copy; 2021 All Rights Reserved By <a href="https://me.cyppst.com" target="_blank">cyppst.com</a></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </footer>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Bact To Top -->
+        <a href="javascript:void(0);" id="backtotop"><i class="icofont-bubble-up"></i></a>
+        <!-- Bact To Top -->
+
+        <!-- Start Include All JS -->
+        <script src="assets/js/jquery.js"></script>
+        <script src="assets/js/bootstrap.min.js"></script>
+        <script src="assets/js/jquery.appear.js"></script>
+        <script src="assets/js/owl.carousel.min.js"></script>
+        <script src="assets/js/mixer.js"></script>
+        <script src="assets/js/lightslider.min.js"></script>
+        <script src="https://maps.google.com/maps/api/js?key=AIzaSyBJtPMZ_LWZKuHTLq5o08KSncQufIhPU3o"></script>
+        <script src="assets/js/gmaps.js"></script>
+        <script src="assets/js/anime.min.js"></script>
+        <script src="assets/js/folio.js"></script>
+        <script src="assets/js/jquery.mCustomScrollbar.concat.min.js"></script>
+        
+        <script src="assets/js/jquery.easytabs.min.js"></script>
+        <script src="assets/js/theme.js"></script>
+        <!-- End Include All JS -->
+    </body>
+</html>
