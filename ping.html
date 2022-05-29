@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+  <head>
+	<meta charset="utf-8" />
+	<title>Keep Alive - Send data packets continuously</title>
+	<link rel="stylesheet" href="style.css">
+  </head>
+  <body>
+    <header>
+      <h1>What is this?</h1>
+      <h2>A simple app developed to demo the new Data RSSI feature</h2>
+    </header>
+    <section>
+  	  There is nothing to see here.. This app does nothing but keep the network connection live by sending data packets to the internet frequently. 
+    </section>
+    <div id="placehere"></div>
+    <script>
+      function loadImage(n) {
+        var elem = document.createElement("img");
+        elem.setAttribute("src", "http://www.google-analytics.com/__utm.gif");
+        document.getElementById("placehere").appendChild(elem);
+        
+        window.setTimeout(function() {
+            console.log((new Date())+" - Loading image..");
+            loadImage();
+        }, 1000);
+    }
+    
+    loadImage();s
+    </script>
+  </body>
+</html>
