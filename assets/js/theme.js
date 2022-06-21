@@ -159,14 +159,14 @@
     }
     
     /*--------------------------------------------------------
-    / 5. Gmaps
+    / 5. Gmaps , 
     /---------------------------------------------------------*/
     if ($('#map').length > 0) {
         var map;
         map = new GMaps({
             el: '#map',
-            lat: 53.967015,
-            lng: -1.079608,
+            lat: 9.071383254698457,
+            lng: 99.0904287358819,
             scrollwheel: false,
             zoom: 16,
             zoomControl: false,
@@ -178,8 +178,8 @@
         });
         var image = '';
         map.addMarker({
-            lat: 53.967015,
-            lng: -1.079608,
+            lat: 9.071383254698457,
+            lng: 99.0904287358819,
             icon: 'assets/images/marker.png',
             animation: google.maps.Animation.DROP,
             verticalAlign: 'bottom',
